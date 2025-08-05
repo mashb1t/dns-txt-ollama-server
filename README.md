@@ -176,5 +176,5 @@ curl http://localhost:11434/api/chat \
 
 ## License
 
-[Add your license here]
+MIT © 2025 Manuel Schmid — see [LICENSE](LICENSE).
 
