@@ -1,6 +1,13 @@
-# DNS-TXT LLM Server
+# DNS TXT Ollama Server
 
 A DNS server that responds to TXT queries with AI-generated content from a local Ollama instance. Ask questions via DNS queries and get AI responses back as TXT records!
+
+This especially should work in
+- DB ICE
+- planes
+- any public Wi-Fi network
+
+without having to log in and without having to pay for their premium services.
 
 ## Features
 
