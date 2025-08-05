@@ -183,12 +183,14 @@ class DNSHandler(socketserver.BaseRequestHandler):
 
 def start_dns_server(port: int = PORT) -> None:
     with socketserver.ThreadingUDPServer(("0.0.0.0", port), DNSHandler) as srv:
+        srv.daemon_threads = True
         print(f"DNS-TXT LLM server listening on UDP {port}")
-
-        # Graceful shutdown
-        for sig in (signal.SIGINT, signal.SIGTERM):
-            signal.signal(sig, lambda *_: srv.shutdown())
-        srv.serve_forever()
+        try:
+            srv.serve_forever(poll_interval=0.5)
+        except KeyboardInterrupt:
+            print("\nShutting down DNS server...")
+        finally:
+            srv.shutdown()
 
 
 if __name__ == "__main__":
