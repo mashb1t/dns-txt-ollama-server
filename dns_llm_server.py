@@ -107,7 +107,8 @@ def dns_safe_prompt(raw_name: str) -> str:
     Convert a DNS name to a safe prompt for the LLM.
     """
     name = raw_name.rstrip(".").removesuffix(DOMAIN)
-    prompt = dns_unescape(name)
+    prompt = name.replace("-", " ")
+    prompt = dns_unescape(prompt)
     return f"Answer in {MAX_CHARS} characters or less, no markdown formatting: {prompt}"
 
 
