@@ -1,0 +1,10 @@
+[project]
+name = "dns-txt-ollama-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dnslib>=0.9.26",
+    "requests>=2.32.4",
+]
