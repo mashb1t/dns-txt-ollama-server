@@ -28,7 +28,7 @@ PORT = 53  # 53 requires root, pick 5353 for development
 TTL = 60
 MAX_CHARS = 500
 DEADLINE_SECONDS = 4
-DOMAIN = ".mashb1t.de"
+DOMAIN = ".example.test"
 
 # LLM CONFIG
 LLM_MODEL = "llama3.2"  # Ollama model to use, ensure it's pulled locally
